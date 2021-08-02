@@ -70,5 +70,16 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void get_total_price_for_selected_menu_items() {
 
+
+        List<String> selectedItemList = new ArrayList<String>();
+        selectedItemList.add("Sweet corn soup");
+        selectedItemList.add("Vegetable lasagne");
+
+        assertEquals(388,service.getSelectedItemTotal(selectedItemList,"Amelie's cafe"));
+
+
+    }
 }

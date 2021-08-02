@@ -35,6 +35,10 @@ public class RestaurantService {
         return restaurants;
     }
 
+    public int getSelectedItemTotal(List<String> selectedItemList,String restaurantName){
+        int totalPrice = 0;
 
+        return totalPrice;
+    }
 
 }
