@@ -37,7 +37,19 @@ public class RestaurantService {
 
     public int getSelectedItemTotal(List<String> selectedItemList,String restaurantName){
         int totalPrice = 0;
+        List<Item> menuList = new ArrayList<Item>();
+        for(int i=0;i<restaurants.size();i++){
+            if(restaurants.get(i).getName().toLowerCase().equals(restaurantName.toLowerCase())){
+                menuList = restaurants.get(i).getMenu();
+                break;
+            }
+        }
 
+        for(int i=0;i<menuList.size();i++){
+            if(selectedItemList.contains(menuList.get(i).getName())){
+                totalPrice += menuList.get(i).getPrice();
+            }
+        }
         return totalPrice;
     }
 
